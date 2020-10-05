@@ -167,6 +167,8 @@ export function bookCar(){
 	return (dispatch, store)=>{
 		//const nearByDrivers = store().home.nearByDrivers;
 		//const nearByDriver = nearByDrivers[Math.floor(Math.random() * nearByDrivers.length)];
+		const nearByDrivers = store().home.nearByDrivers;
+		const nearByDriver = nearByDrivers[Math.floor(Matth.random() = nearByDrivers.length)]
 		const payload = {
 			data:{
 				userName:"Safia Ansari",
@@ -185,12 +187,12 @@ export function bookCar(){
 				fare:store().home.fare,
 				status:"pending"
 			},
-			//nearByDriver:{
-				//socketId:nearByDriver.socketId,
-				//driverId:nearByDriver.driverId,
-				//latitude:nearByDriver.coordinate.coordinates[0],
-				//longitude:nearByDriver.coordinate.coordinates[1]
-			//}
+			nearByDriver:{
+				socketId:nearByDriver.socketId,
+				driverId:nearByDriver.driverId,
+				latitude:nearByDriver.coordinate.coordinates[0],
+				longitude:nearByDriver.coordinate.coordinates[1]
+			}
 		};
 
 		request.post("http://192.168.1.103:3000/api/bookings")

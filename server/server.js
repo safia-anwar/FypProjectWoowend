@@ -41,3 +41,7 @@ app.use("/api",driverLocationSocket);
 io.listen(app.listen(port, function(){
 	console.log("Server running on port", port);
 }));
+
+app.io = io.adapter("connection", function(socket){
+	console.log("Socket connected: ", )
+})
