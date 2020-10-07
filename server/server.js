@@ -6,11 +6,12 @@ var index = require("./routes/index");
 var bookings = require("./routes/bookings");
 var driverLocation = require("./routes/driverLocation");
 var driverLocationSocket = require("./routes/driverLocation");
-
+var authRoutes = require("./routes/authRoutes");
 
 var app = express();
 
 var port = 3000;
+
 
 
 var socket_io = require("socket.io");
@@ -35,6 +36,9 @@ app.use("/", index);
 app.use("/api", bookings);
 app.use("/api", driverLocation);
 app.use("/api",driverLocationSocket);
+app.use("/api",authRoutes);
+
+
 
 
 

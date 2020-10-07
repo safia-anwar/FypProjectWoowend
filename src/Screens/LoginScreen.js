@@ -75,6 +75,7 @@ export default class LoginScreen extends React.Component {
         }, 150);
     }
 
+
     render() {
         const width = this.state.animation_login;
         return (
@@ -104,6 +105,7 @@ export default class LoginScreen extends React.Component {
                             placeholder="Enter Your Email"
                             style={styles.textInput}
                             onFocus={() => this._foucus("email")}
+                            
                         />
                         {this.state.typing_email ?
                             this._typing()

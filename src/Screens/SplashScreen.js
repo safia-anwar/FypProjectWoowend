@@ -5,8 +5,7 @@ import {
   Text,
   StyleSheet,
   ActivityIndicator
-}
-  from 'react-native';
+} from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 

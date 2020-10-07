@@ -23,7 +23,6 @@ export default class SignupScreen extends React.Component{
     this.state={
       typing_email: false,
       typing_password: false,
-      typing_cpassword:false,
       animation_login : new Animated.Value(width-40),
       enable:true
     }
@@ -33,26 +32,15 @@ export default class SignupScreen extends React.Component{
     if(value=="email"){
       this.setState({
         typing_email: true,
-        typing_password: false,
-        typing_cpassword:false
+        typing_password: false
       })
     }
     if (value=="password") {
          this.setState({
         typing_email: false,
-        typing_password: true,
-        typing_cpassword:false
+        typing_password: true
       })
     }
-
-      if (value=="cpassword") {
-         this.setState({
-        typing_email: false,
-        typing_password: false,
-        typing_cpassword:true
-      })
-
-      }
     
   }
 
@@ -80,8 +68,7 @@ export default class SignupScreen extends React.Component{
       this.setState({
         enable:false,
         typing_email: false,
-        typing_password: false,
-        typing_cpassword:false
+        typing_password: false
       })
     }, 150);
   }
@@ -115,6 +102,7 @@ export default class SignupScreen extends React.Component{
                       placeholder="Enter Your Email"
                       style={styles.textInput}
                       onFocus={()=>this._foucus("email")}
+                      
                     />
                     {this.state.typing_email ?
                       this._typing()
@@ -130,21 +118,6 @@ export default class SignupScreen extends React.Component{
                       placeholder="Enter Your Password"
                       style={styles.textInput}
                       onFocus={()=>this._foucus("password")}
-                    />
-                    {this.state.typing_password ?
-                      this._typing()
-                    : null}
-                </View>
-
-                <Text style={[styles.title,{
-                  marginTop:20
-                }]}>Confirm Password</Text>
-                <View style={styles.action}>
-                    <TextInput 
-                      secureTextEntry
-                      placeholder="Confirm Your Password"
-                      style={styles.textInput}
-                      onFocus={()=>this._foucus("cpassword")}
                     />
                     {this.state.typing_password ?
                       this._typing()
